@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>J-BA Design｜成交型設計・引流系統・品牌視覺</title>
+  <meta name="description" content="J-BA Design 專做成交型設計、品牌視覺、社群引流與 LINE 成交流程，幫品牌把專業感、信任感與詢問率設計出來。" />
+  <style>
+    :root{
+      --bg:#090806;
+      --bg2:#14100b;
+      --card:#17130d;
+      --gold:#d7b766;
+      --gold2:#f1d47a;
+      --text:#f6efe3;
+      --muted:#c8bcaa;
+      --line:#06c755;
+      --border:rgba(215,183,102,.2);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:"Noto Sans TC","Microsoft JhengHei",Arial,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.75;
+    }
+    a{text-decoration:none;color:inherit}
+    .wrap{width:min(1120px,88%);margin:auto}
+    .nav{
+      position:sticky;top:0;z-index:99;
+      background:rgba(9,8,6,.82);
+      backdrop-filter:blur(16px);
+      border-bottom:1px solid var(--border);
+    }
+    .nav-inner{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:16px 0;
+    }
+    .logo{font-weight:900;letter-spacing:.08em;color:var(--gold)}
+    .nav-links a{margin-left:22px;font-size:14px;color:#e3d8c4}
+    .hero{
+      position:relative;overflow:hidden;
+      min-height:92vh;display:grid;align-items:center;
+      background:
+      radial-gradient(circle at 75% 20%,rgba(215,183,102,.24),transparent 32%),
+      radial-gradient(circle at 15% 75%,rgba(255,255,255,.08),transparent 26%),
+      linear-gradient(135deg,#090806,#18120a 70%,#090806);
+    }
+    .hero:before{
+      content:"";position:absolute;inset:0;
+      background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
+      background-size:52px 52px;mask-image:linear-gradient(to bottom,black,transparent 78%);
+    }
+    .hero-content{position:relative;padding:84px 0}
+    .eyebrow{
+      display:inline-block;padding:7px 13px;border:1px solid var(--border);
+      border-radius:999px;color:var(--gold2);font-size:13px;font-weight:800;letter-spacing:.16em;
+      background:rgba(215,183,102,.08);
+    }
+    h1{
+      margin:22px 0 20px;
+      font-size:clamp(42px,7vw,86px);
+      line-height:1.06;letter-spacing:-.05em;
+    }
+    .gold{color:var(--gold)}
+    .lead{max-width:760px;color:var(--muted);font-size:clamp(18px,2.3vw,23px)}
+    .actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:15px 24px;border-radius:999px;font-weight:900;transition:.25s;
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{
+      background:linear-gradient(135deg,#f4d77e,#a97a28);
+      color:#111;box-shadow:0 18px 48px rgba(215,183,102,.25);
+    }
+    .btn-line{background:var(--line);color:white;box-shadow:0 16px 40px rgba(6,199,85,.22)}
+    .btn-secondary{border:1px solid rgba(215,183,102,.55);color:#f7e8bb;background:rgba(255,255,255,.03)}
+    .proof{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:46px;max-width:860px;
+    }
+    .proof div{
+      padding:18px;border-radius:20px;background:rgba(255,255,255,.055);border:1px solid var(--border);
+    }
+    .proof strong{display:block;color:var(--gold2);font-size:22px}
+    section{padding:86px 0}
+    .dark{background:#0e0d0b}
+    .title{font-size:clamp(30px,4.4vw,56px);line-height:1.15;margin:0 0 16px;letter-spacing:-.03em}
+    .sub{max-width:760px;color:var(--muted);font-size:18px;margin:0 0 38px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{
+      padding:30px;border-radius:28px;background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.025));
+      border:1px solid var(--border);box-shadow:0 24px 70px rgba(0,0,0,.28);
+    }
+    .card h3{margin:0 0 10px;color:var(--gold2);font-size:23px}
+    .card p,.card li{color:#cdc2b0}
+    .list{padding:0;margin:0;list-style:none}
+    .list li{padding:12px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+    .flow{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .step{
+      padding:24px;border-radius:24px;background:rgba(215,183,102,.08);border:1px solid var(--border);
+    }
+    .num{display:inline-block;color:#111;background:var(--gold2);border-radius:999px;padding:4px 10px;font-weight:900;font-size:13px}
+    .price{font-size:34px;font-weight:900;color:white;margin:10px 0}
+    .tag{
+      display:inline-block;padding:6px 12px;border-radius:999px;background:rgba(215,183,102,.14);
+      color:var(--gold2);font-weight:900;font-size:13px;
+    }
+    .highlight{border-color:rgba(241,212,122,.48);transform:translateY(-8px)}
+    .quote{
+      padding:34px;border-radius:30px;background:linear-gradient(135deg,rgba(215,183,102,.14),rgba(255,255,255,.035));
+      border:1px solid var(--border);
+    }
+    .quote p{font-size:24px;margin:0;color:#f6e4b4}
+    .quote span{display:block;margin-top:14px;color:var(--muted)}
+    .cta{
+      text-align:center;background:
+      radial-gradient(circle at 50% 0%,rgba(215,183,102,.24),transparent 38%),
+      linear-gradient(180deg,#0e0d0b,#090806);
+    }
+    .cta .sub{margin-left:auto;margin-right:auto}
+    .float-line{
+      position:fixed;right:18px;bottom:18px;z-index:100;
+      background:var(--line);color:#fff;border-radius:999px;padding:14px 18px;font-weight:900;
+      box-shadow:0 18px 48px rgba(0,0,0,.35);
+    }
+    footer{padding:34px 0;border-top:1px solid var(--border);color:#918674;font-size:14px}
+    @media(max-width:900px){
+      .nav-links{display:none}
+      .proof,.grid,.flow{grid-template-columns:1fr}
+      .highlight{transform:none}
+      section{padding:68px 0}
+      .hero-content{padding:70px 0}
+    }
+  </style>
+</head>
+
+<body>
+  <a class="float-line" href="https://line.me/R/ti/p/@509gguza" target="_blank">LINE 諮詢</a>
+
+  <nav class="nav">
+    <div class="wrap nav-inner">
+      <div class="logo">J-BA DESIGN</div>
+      <div class="nav-links">
+        <a href="#problem">品牌痛點</a>
+        <a href="#services">服務</a>
+        <a href="#flow">流程</a>
+        <a href="#pricing">方案</a>
+        <a href="#contact">諮詢</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="wrap hero-content">
+      <span class="eyebrow">CONVERSION DESIGN STUDIO</span>
+      <h1>好看的設計很多。<br><span class="gold">會讓客戶詢問的設計，很少。</span></h1>
+      <p class="lead">
+        J-BA Design 專做成交型設計、品牌視覺、社群引流與 LINE 成交流程。
+        我們不是把畫面做漂亮而已，而是幫你把「專業感、信任感、詢問率」一起設計出來。
+      </p>
+      <div class="actions">
+        <a class="btn btn-line" href="https://line.me/R/ti/p/@509gguza" target="_blank">加 LINE 免費診斷</a>
+        <a class="btn btn-secondary" href="https://www.instagram.com/jennycds/" target="_blank">查看 IG 作品</a>
+      </div>
+      <div class="proof">
+        <div><strong>01</strong> 先建立信任，不急著硬賣</div>
+        <div><strong>02</strong> 讓客戶看懂你值在哪裡</div>
+        <div><strong>03</strong> 把流量導向 LINE 成交</div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="problem" class="dark">
+      <div class="wrap">
+        <h2 class="title">很多品牌不是不好，<br>是第一眼沒有被相信。</h2>
+        <p class="sub">客戶滑過你的貼文、看過你的廣告，卻沒有詢問，通常不是產品差，而是畫面沒有把價值說清楚。</p>
+        <div class="grid">
+          <div class="card"><h3>有曝光，沒詢問</h3><p>廣告有人看，但客戶不知道下一步要做什麼。</p></div>
+          <div class="card"><h3>有設計，沒價值感</h3><p>畫面不差，但沒有讓人感覺專業、可靠、值得付錢。</p></div>
+          <div class="card"><h3>有人私訊，沒成交</h3><p>沒有整理好 LINE 回覆、報價邏輯與成交話術。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="wrap">
+        <h2 class="title">我們做的不是單張圖，<br>是一套接單入口。</h2>
+        <p class="sub">從第一眼視覺、社群內容、廣告圖，到 LINE 諮詢與報價頁，我們幫你把客戶往成交帶。</p>
+        <div class="grid">
+          <div class="card">
+            <h3>成交型視覺設計</h3>
+            <ul class="list">
+              <li>Logo / 品牌識別 / CIS</li>
+              <li>IG、FB 廣告圖與貼文</li>
+              <li>一頁式報價頁 / 銷售頁</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>社群引流素材</h3>
+            <ul class="list">
+              <li>短影音封面與標題</li>
+              <li>30 天內容方向</li>
+              <li>老闆看得懂的成交文案</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>LINE 成交流程</h3>
+            <ul class="list">
+              <li>LINE 導流入口設計</li>
+              <li>自動回覆與私訊話術</li>
+              <li>諮詢到報價的成交路徑</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="flow" class="dark">
+      <div class="wrap">
+        <h2 class="title">成交路徑這樣走</h2>
+        <p class="sub">不是先追求爆流量，而是先讓進來的人知道：你是值得選擇的。</p>
+        <div class="flow">
+          <div class="step"><span class="num">01</span><h3>吸引</h3><p>用視覺與標題抓住對的人。</p></div>
+          <div class="step"><span class="num">02</span><h3>信任</h3><p>讓客戶看懂你專業在哪裡。</p></div>
+          <div class="step"><span class="num">03</span><h3>詢問</h3><p>明確導到 LINE，不讓客戶迷路。</p></div>
+          <div class="step"><span class="num">04</span><h3>成交</h3><p>用報價頁與話術提高成交率。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="quote">
+          <p>「我們不是把品牌包裝得很像大公司，而是讓客戶在第一眼就覺得：這家公司值得問問看。」</p>
+          <span>— J-BA Design 成交型設計觀點</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing" class="dark">
+      <div class="wrap">
+        <h2 class="title">服務方案</h2>
+        <p class="sub">以下為初步方案，實際會依產業、內容量、設計範圍與執行深度調整。</p>
+        <div class="grid">
+          <div class="card">
+            <span class="tag">入門</span>
+            <h3>社群設計方案</h3>
+            <div class="price">NT$15,000 起</div>
+            <p>適合需要固定社群圖、廣告圖與基礎品牌感的店家。</p>
+          </div>
+          <div class="card highlight">
+            <span class="tag">主推</span>
+            <h3>成交放大方案</h3>
+            <div class="price">NT$30,000 起 / 月</div>
+            <p>適合想把 IG、FB、LINE 串成接單流程的品牌。</p>
+          </div>
+          <div class="card">
+            <span class="tag">高端</span>
+            <h3>品牌整合方案</h3>
+            <div class="price">NT$60,000 起</div>
+            <p>適合要完整品牌升級、網站、銷售頁與成交流程的公司。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="cta">
+      <div class="wrap">
+        <h2 class="title">你不缺努力，<br><span class="gold">你缺一個會成交的入口。</span></h2>
+        <p class="sub">點下方 LINE，直接告訴我們你的產業、目前遇到的問題，我們幫你看怎麼調整。</p>
+        <div class="actions" style="justify-content:center">
+          <a class="btn btn-line" href="https://line.me/R/ti/p/@509gguza" target="_blank">LINE 立即諮詢</a>
+          <a class="btn btn-secondary" href="https://www.instagram.com/jennycds/" target="_blank">查看 IG 作品</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">© 2026 J-BA Design｜成交型設計・品牌視覺・社群引流・LINE 成交流程</div>
+  </footer>
+</body>
+</html>
